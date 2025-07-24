@@ -1,0 +1,40 @@
+body{
+.message-box {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #fff3cd; 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.message-warning p {
+    color: #856404;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.return-btn {
+    padding: 10px 20px;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+
+.return-btn:hover {
+    background-color: #e0a800;
+}
+}

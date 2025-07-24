@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <form action="" method="post">
+        <h2>Hotel Booking</h2>
+        <label>Full name:</label>
+        <input type="text" name="hoten" required>
+
+        <label>Room type:</label>
+        <select name="loaiphong" required>
+            <option value="">-- Select room type --</option>
+            <option value="standard">Standard</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="vip">VIP</option>
+        </select>
+
+        <label>Number of nights:</label>
+        <input type="number" name="sodem" min="1" required>
+
+        <label>Special notes:</label>
+        <textarea name="ghichu" rows="3"></textarea>
+
+        <button type="submit">Booking room</button>
+    </form>
+</body>
+</html>

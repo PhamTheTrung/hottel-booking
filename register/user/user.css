@@ -1,0 +1,149 @@
+/* Bố cục toàn trang */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Container chính */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Tiêu đề */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form */
+form input,
+form select {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin: 10px 20px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #8cd0ec;
+}
+
+/* Bảng dữ liệu */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #599de6;
+    color: white;
+}
+
+td {
+    background-color: #fdf5fa;
+    word-break: break-word;
+}
+
+/* Nút hành động */
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 2px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.edit-btn {
+    background-color: #8cd0ec;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #888;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: #555;
+}
+
+/* Responsive cho thiết bị nhỏ */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    form input,
+    form select {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        text-align: left;
+        background-color: #de98d1;
+        color: white;
+    }
+
+    td {
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+    }
+}

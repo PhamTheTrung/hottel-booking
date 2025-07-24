@@ -1,0 +1,119 @@
+body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-form {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-form h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #ff0000;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"]
+     {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .message-box {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    }
+.message-box {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #fff3cd; /* màu nền vàng nhạt */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.message-warning p {
+    color: #856404;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.return-btn {
+    padding: 10px 20px;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+
+.return-btn:hover {
+    background-color: #e0a800;
+}
+    

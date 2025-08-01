@@ -2,7 +2,7 @@
 $servername = "localhost"; //default
 $username = "root"; //default
 $password = ""; //default
-$database = "bookingonline"; //Database name
+$database = "usersystem"; //Database name
 
 // Kết nối MySQL
 //$conn

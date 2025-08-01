@@ -10,7 +10,7 @@ $email = isset($_POST["email"]) ? trim($_POST["email"]) : '';
 $phone = isset($_POST["phone"]) ? trim($_POST["phone"]) : '';
 $address = isset($_POST["address"]) ? trim($_POST["address"]) : '';
 $password = isset($_POST["password"]) ? $_POST["password"] : '';
-$confirmPassword = isset($_POST["confirm_Password"]) ? $_POST["confirm_Password"] : '';
+$confirmPassword = isset($_POST["confirm_password"]) ? $_POST["confirm_password"] : '';
 
 // Validation
 if (empty($fullName) || empty($email) || empty($phone) || empty($address) || empty($password) || empty($confirmPassword)) {
@@ -47,7 +47,40 @@ if (empty($fullName) || empty($email) || empty($phone) || empty($address) || emp
                 if ($stmt_insert) {
                     mysqli_stmt_bind_param($stmt_insert, "ssssss", $fullName, $email, $hashed_password, $phone, $address, $role);
                     if (mysqli_stmt_execute($stmt_insert)) {
-                        header("Location: login.html");
+                        $message = "<div class='alert alert-success'>Đăng ký thành công. Chuyển hướng đến trang đăng nhập...</div>";
+                        echo "<!DOCTYPE html>
+<html lang='vi'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <title>Đăng ký</title>
+</head>
+<body class='bg-light'>
+    <div class='container'>
+        <div class='row justify-content-center'>
+<div class='col-md-6'>
+                <div class='card mt-5'>
+                    <div class='card-header bg-primary text-white text-center'>
+                        <h4>Kết quả đăng ký</h4>
+                    </div>
+                    <div class='card-body'>
+                        $message
+                        <div class='text-center mt-3'>
+                            <a href='login.html' class='btn btn-primary'>Đăng nhập ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 2000);
+    </script>
+</body>
+</html>";
                         exit;
                     } else {
                         $message = "<div class='alert alert-danger'>Lỗi khi đăng ký: " . mysqli_error($conn) . "</div>";
@@ -64,6 +97,7 @@ if (empty($fullName) || empty($email) || empty($phone) || empty($address) || emp
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="vi">

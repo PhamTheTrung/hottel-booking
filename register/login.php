@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Truy vấn người dùng theo email
-    $query = "SELECT UserID, FullName, PasswordHash FROM Users WHERE Email = ?";
+    // Truy vấn người dùng theo email, lấy cả Role
+    $query = "SELECT UserID, FullName, PasswordHash, Role FROM Users WHERE Email = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "s", $email);
 
@@ -17,19 +17,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Nếu có đúng 1 người dùng với email này
         if (mysqli_stmt_num_rows($stmt) == 1) {
-            mysqli_stmt_bind_result($stmt, $userid, $fullname, $hashed_password);
+            mysqli_stmt_bind_result($stmt, $userid, $fullname, $hashed_password, $role);
             mysqli_stmt_fetch($stmt);
 
-            // Kiểm tra mật khẩu (password tường minh đã nhập trong form login với password 
-            //đã bị mã hóa trong DB)
+            // Kiểm tra mật khẩu
             if (password_verify($password, $hashed_password)) {
                 // Đăng nhập thành công -> lưu session
                 $_SESSION['user_id'] = $userid;
                 $_SESSION['user_name'] = $fullname;
+                $_SESSION['role'] = $role;
 
-                // Chuyển hướng đến trang chính
-                header("Location: ../main.html");
-                exit();
+                // Chuyển hướng theo role
+                if ($role === 'Admin') {
+                    header("Location: ../dashboard_admin.php");
+                    exit();
+                } else {
+                    header("Location: ../main.php");
+                    exit();
+                }
             } else {
                 echo "Mật khẩu không đúng.";
             }
@@ -53,3 +58,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_close($stmt);
 }
 mysqli_close($conn);
+?>

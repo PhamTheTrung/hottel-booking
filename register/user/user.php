@@ -109,6 +109,7 @@ $result = mysqli_query($conn, "SELECT UserID, FullName, Email, PhoneNumber, Addr
         </table>
 
         <a href="dashboard.php" class="btn back-btn">Quay lại</a>
+        <a href="../../admin_rooms.php" class="btn" style="background:#007bff;color:#fff;margin-left:10px;">Quản lý phòng (Admin)</a>
     </div>
     <script src="user.js"></script>
 </body>
